@@ -149,10 +149,13 @@ main#elementDescribe {
     }
 
     ol li {
-        list-style: decimal;
-        list-style-position: inside;
         direction: rtl;
         margin-right: 5px;
+
+        &:not(#notList) {
+            list-style: decimal;
+            list-style-position: inside;
+        }
 
         @media (max-width: 486px) {
             font-size: 20px;

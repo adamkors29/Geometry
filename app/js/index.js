@@ -48,7 +48,7 @@ openCheckerFunc("perpendicular", "הגדרה: אנך הוא ישר החותך י
 openCheckerFunc("lineMiddle", "הגדרה: אמצע קטע היא נקודה על קטע, אשר חוצה אותו לשני חלקים שווים.");
 openCheckerFunc("shapeLineMiddle", "הגדרה: אמצע צלע היא נקודה על צלע, אשר חוצה אותו לשני חלקים שווים.");
 
-if ($("main#elementDescribe>div").attr("data").split(",")[0] == "trapeze")
+if ($("main#elementDescribe>div").attr("data").split(",")[0] == "trapeze" || $("main#elementDescribe>div").attr("data").split(",")[0] == "rightAngledTrapeze" || $("main#elementDescribe>div").attr("data").split(",")[0] == "isoscelesTrapeze")
     $("main#elementDescribe>div").css("background", `url("../../img/${$("main#elementDescribe>div").attr("data").split(",")[0]}.png") no-repeat center center`);
 else $("main#elementDescribe>div").css("background", `url("../img/${$("main#elementDescribe>div").attr("data").split(",")[0]}.png") no-repeat center center`);
 $("main#elementDescribe>div").css("aspect-ratio", `${$("main#elementDescribe>div").attr("data").split(",")[1]} / ${$("main#elementDescribe>div").attr("data").split(",")[2]}`);
