@@ -102,7 +102,15 @@ main:not(#elementDescribe) {
 main#elementDescribe {
     padding: 30px 50px;
 
-    >div {
+    #flex {
+        width: 100%;
+        @extend %displayFlex;
+        justify-content: right;
+        flex-wrap: wrap;
+    }
+
+    >div,
+    #flex>div {
         margin-top: 30px;
         width: 400px;
         background-size: contain !important;
