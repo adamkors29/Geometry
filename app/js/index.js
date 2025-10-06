@@ -41,6 +41,8 @@ function openCheckerFunc(name, text) {
 
 footerY();
 
+$(window).resize(function () { footerY() });
+
 openCheckerFunc("height", "הגדרה: גובה במשולש הוא אנך היורד מקודקוד המשולש לצלע שמולו.");
 openCheckerFunc("lineDevider", "הגדרה: תיכון במשולש הוא קטע המחבר את קודקוד המשולש עם אמצע הצלע שמולו.");
 openCheckerFunc("angleDevider", "הגדרה: חוצה זווית הוא ישר החוצה זווית מסויימת לשני חלקים שווים.");
