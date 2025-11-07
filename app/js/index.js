@@ -49,15 +49,20 @@ openCheckerFunc("angleDevider", "הגדרה: חוצה זווית הוא ישר �
 openCheckerFunc("perpendicular", "הגדרה: אנך הוא ישר החותך ישר נתון בזווית ישרה.");
 openCheckerFunc("lineMiddle", "הגדרה: אמצע קטע היא נקודה על קטע שחוצה אותו לשני חלקים שווים.");
 openCheckerFunc("shapeLineMiddle", "הגדרה: אמצע צלע היא נקודה על צלע שחוצה אותו לשני חלקים שווים.");
-openCheckerFunc("triangleAnglesSum", "תכונת משולש: סכום זוויות במשולש שווה ל-˚180")
+openCheckerFunc("triangleAnglesSum", "תכונת משולש: סכום זוויות במשולש שווה ל-˚180");
+openCheckerFunc("triangleS", "תכונת משולש: שטח שווה למחצית המכפלה של צלע בגובה לאותו צלע");
+openCheckerFunc("trapezeS", "תכונת טרפז: שטח שווה למחצית המכפלה של סכום הבסיסים בגובה הטרפז");
 
 
 if ($("main#elementDescribe").length) {
     if (!$("#flex").length) {
-        if ($("main#elementDescribe>div").attr("data").split(",")[0] == "trapeze" || $("main#elementDescribe>div").attr("data").split(",")[0] == "rightAngledTrapeze" || $("main#elementDescribe>div").attr("data").split(",")[0] == "isoscelesTrapeze")
-            $("main#elementDescribe>div").css("background", `url("../../img/${$("main#elementDescribe>div").attr("data").split(",")[0]}.png") no-repeat center center`);
-        else $("main#elementDescribe>div").css("background", `url("../img/${$("main#elementDescribe>div").attr("data").split(",")[0]}.png") no-repeat center center`);
-        $("main#elementDescribe>div").css("aspect-ratio", `${$("main#elementDescribe>div").attr("data").split(",")[1]} / ${$("main#elementDescribe>div").attr("data").split(",")[2]}`);
+        for (var i = 1; i <= $("main#elementDescribe>div").length; i++) {
+            var el = $(`main#elementDescribe>div:nth-of-type(${i})`);
+            if ($("main#elementDescribe>div").attr("data").split(",")[0] == "trapeze" || $("main#elementDescribe>div").attr("data").split(",")[0] == "rightAngledTrapeze" || $("main#elementDescribe>div").attr("data").split(",")[0] == "isoscelesTrapeze")
+                $("main#elementDescribe>div").css("background", `url("../../img/${$("main#elementDescribe>div").attr("data").split(",")[0]}.png") no-repeat center center`);
+            else el.css("background", `url("../img/${el.attr("data").split(",")[0]}.png") no-repeat center center`);
+            el.css("aspect-ratio", `${el.attr("data").split(",")[1]} / ${el.attr("data").split(",")[2]}`);
+        }
     } else {
         for (var i = 1; i <= 4; i++) {
             if ($(`#flex>div:nth-of-type(${i})`).length) {
